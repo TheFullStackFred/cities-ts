@@ -1,7 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 body {
-  background-color: rgb(227, 74, 229);
+  background-color: rgba(240, 105, 9, 0.895);
 }
 
 .cities-card {

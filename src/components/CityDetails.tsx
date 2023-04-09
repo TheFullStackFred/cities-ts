@@ -1,10 +1,16 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Cities from './Cities'
 
 const CityDetails = ({ cities }: React.ComponentProps<typeof Cities>) => {
-  const { name } = useParams<{ name: string }>()
+  const navigate = useNavigate()
 
+  const { name } = useParams<{ name: string }>()
   const city = cities?.find((city) => city.name === name)
+
+  const goBack = () => {
+    navigate(-1)
+  }
+
   return (
     <>
       <h1>City Details</h1>
@@ -13,6 +19,9 @@ const CityDetails = ({ cities }: React.ComponentProps<typeof Cities>) => {
           <h5 className='card-title'>Name: {city?.name} </h5>
           <h5 className='card-title'>Population: {city?.population} </h5>
           <h5 className='card-title'>Id: {city?.id} </h5>
+          <button onClick={goBack} className='btn btn-primary'>
+            Back
+          </button>
         </div>
       </div>
     </>

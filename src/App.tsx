@@ -28,7 +28,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path='/' element={<Cities cities={cities} />} />
-          <Route path='/city/:id' element={<CityDetails cities={cities} />} />
+          <Route path='/city/:name' element={<CityDetails cities={cities} />} />
           <Route path='*' element={<h1>404 error</h1>} />
         </Routes>
       </Router>

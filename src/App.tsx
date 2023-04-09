@@ -25,7 +25,6 @@ const App = () => {
 
   return (
     <div className='d-flex justify-content-center align-items-center flex-column'>
-      <h1>Cities with Typescript</h1>
       <Router>
         <Routes>
           <Route path='/' element={<Cities cities={cities} />} />

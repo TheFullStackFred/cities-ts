@@ -1,1 +1,13 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-color: rgb(227, 74, 229);
+}
+
+.cities-card {
+  cursor: pointer;
+}
+
+.cities-card:active {
+  transform: scale(0.9);
+}

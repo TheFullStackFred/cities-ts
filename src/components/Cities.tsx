@@ -1,20 +1,26 @@
+import { useNavigate } from 'react-router-dom'
 import { City } from '../types'
 
 type CitiesProps = {
-  data: City[]
+  cities: City[]
 }
 
-const Cities = ({ data }: CitiesProps) => {
+const Cities = ({ cities }: CitiesProps) => {
+  const navigate = useNavigate()
+
+  const showCityDetails = (name: string) => {
+    navigate(`/city/ ${name}`)
+  }
   return (
     <>
-      {data?.map((city) => (
-        <div key={city.id} className='card p-1 m-1 bg-light'>
-          <div className='card-body'>
-            <h5 className='card-title'>Name: {city.name}</h5>
-            <h6 className='card-subtitle mb-2 text-muted'>
-              Population {city.population}
-            </h6>
-            <p className='card-text'>{city.id}</p>
+      {cities?.map((city) => (
+        <div
+          onClick={() => showCityDetails(city.name)}
+          key={city.id}
+          className='card p-1 m-1 bg-light w-50 cities-card'
+        >
+          <div className='card-body d-flex align-items-center  flex-column'>
+            <h5 className='card-title'>Name: {city.name} </h5>
           </div>
         </div>
       ))}
